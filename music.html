@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sofia Caprariu - Music</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="music.css">
+</head>
+
+<body class="music-page">
+
+    <div id="site-menu"></div>
+
+    <main class="music-layout">
+
+        <!-- SIDEBAR -->
+
+        <aside class="music-sidebar">
+
+            <!-- SEARCH -->
+
+            <div class="music-search-container">
+
+                <button
+                    class="music-sidebar-button"
+                    id="searchButton"
+                    type="button"
+                    aria-label="Search music">
+
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="6.5"></circle>
+                        <line x1="16" y1="16" x2="21" y2="21"></line>
+                    </svg>
+
+                </button>
+
+                <div class="search-box" id="searchBox">
+
+                    <input
+                        type="text"
+                        id="musicSearch"
+                        placeholder="search..."
+                        autocomplete="off"
+                    >
+
+                    <div
+                        class="search-results"
+                        id="searchResults">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- HEART -->
+
+            <button
+                class="music-sidebar-button pink-heart"
+                type="button"
+                aria-label="Favorites">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    fill="currentColor">
+
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+
+                </svg>
+
+            </button>
+
+            <!-- HOME -->
+
+            <a
+                href="index.html"
+                class="music-sidebar-button music-home"
+                aria-label="Home">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 11.5L12 4l9 7.5"></path>
+                    <path d="M5 10.5V20h14v-9.5"></path>
+                    <path d="M9 20v-6h6v6"></path>
+                </svg>
+
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN MUSIC CONTENT -->
+
+        <section class="music-content">
+
+            <div class="music-heading">
+                <h1>MY MUSIC</h1>
+                <p>SONGS I HAVE PLAYED</p>
+            </div>
+
+            <!-- SONG TABLE -->
+
+            <div class="song-table">
+
+                <div class="song-row song-header">
+                    <div>#</div>
+                    <div>TITLE</div>
+                    <div>LENGTH</div>
+                    <div>DATE</div>
+                </div>
+
+                <!-- Generated automatically by music.js -->
+                <div id="songList"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- SONG PLAYER -->
+
+    <div class="song-overlay" id="songOverlay">
+
+        <div class="song-player">
+
+            <!-- CLOSE -->
+
+            <div class="player-top">
+                <span></span>
+
+                <button
+                    class="close-player"
+                    id="closePlayer"
+                    type="button"
+                    aria-label="Close player">
+                    ×
+                </button>
+            </div>
+
+
+            <!-- FILM FRAME -->
+
+            <div class="film-section">
+
+                <div class="film-strip film-strip-left">
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                </div>
+
+                <div class="media-frame" id="mediaFrame">
+
+                    <!-- Default placeholder -->
+
+                    <div
+                        class="image-placeholder"
+                        id="imagePlaceholder">
+
+                        <div class="play-placeholder">▶</div>
+
+                    </div>
+
+                    <!-- Video plays inside the film frame -->
+
+                    <video
+                        id="songVideo"
+                        class="song-video"
+                        controls
+                        playsinline
+                        hidden>
+                    </video>
+
+                </div>
+
+                <div class="film-strip film-strip-right">
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                    <div class="film-hole"></div>
+                </div>
+
+            </div>
+
+
+            <!-- OPTIONAL VIDEO BUTTON + STATUS -->
+
+            <div class="media-options">
+
+                <button
+                    type="button"
+                    id="toggleVideoButton"
+                    class="toggle-video-button"
+                    hidden>
+                    Watch video
+                </button>
+
+                <p
+                    id="mediaMessage"
+                    class="media-message">
+                    Press play to listen to the song.
+                </p>
+
+            </div>
+
+
+            <!-- AUDIO IS INDEPENDENT OF VIDEO -->
+
+            <audio id="audioPlayer" preload="metadata"></audio>
+
+
+            <!-- SONG INFORMATION -->
+
+            <div class="player-song-info">
+
+                <div>
+                    <span class="player-small-label">
+                        NOW PLAYING
+                    </span>
+
+                    <h2 id="playerTitle">Select a song</h2>
+                </div>
+
+            </div>
+
+
+            <!-- TIMELINE -->
+
+            <div class="player-timeline">
+
+                <span id="currentTime">00:00</span>
+
+                <div class="timeline" id="timeline">
+                    <div
+                        class="timeline-progress"
+                        id="timelineProgress">
+                    </div>
+                </div>
+
+                <span id="totalTime">00:00</span>
+
+            </div>
+
+
+            <!-- CONTROLS -->
+
+            <div class="player-controls">
+
+                <button
+                    class="player-control"
+                    id="previousButton"
+                    type="button"
+                    aria-label="Previous song">
+                    |‹
+                </button>
+
+                <button
+                    class="player-control play-button"
+                    id="playButton"
+                    type="button"
+                    aria-label="Play or pause">
+                    ▶
+                </button>
+
+                <button
+                    class="player-control"
+                    id="nextButton"
+                    type="button"
+                    aria-label="Next song">
+                    ›|
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCRIPTS -->
+
+    <script src="menu.js"></script>
+    <script src="music.js"></script>
+
+</body>
+</html>

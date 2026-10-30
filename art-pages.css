@@ -1,0 +1,713 @@
+/* ==================================================
+   ART PAGES
+================================================== */
+
+.art-feed-page {
+    min-height: 100vh;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.art-feed-page .google-header {
+    position: relative;
+    z-index: 20000;
+}
+
+.art-feed-page .menu-container {
+    position: relative;
+    z-index: 30000;
+}
+
+
+/* cÃ¢nd meniul se deschide */
+.art-feed-page .menu-container:has(.dropdown-menu.active) {
+    width: 340px;
+}
+
+
+/* ==================================================
+   THINKING BUBBLES
+================================================== */
+
+.art-feed-page .thinking-bubbles {
+
+    position: absolute;
+
+    left: 165px;
+    top: 5px;
+
+    width: 285px;
+    height: 150px;
+
+    display: none;
+
+    pointer-events: none;
+
+    z-index: 500;
+
+}
+
+
+.art-feed-page .thinking-bubbles.active {
+    display: block;
+}
+
+
+/* fiecare bulÄƒ */
+
+.art-feed-page .thinking-bubble {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.12);
+
+    border: 1px solid rgba(254,175,220,0.75);
+
+    pointer-events: auto;
+
+    box-sizing: border-box;
+
+}
+
+
+/* cea mai micÄƒ */
+
+.art-feed-page .bubble-1 {
+
+    width: 25px;
+    height: 25px;
+
+    left: 45px;
+    bottom: 18px;
+
+}
+
+
+/* a doua */
+
+.art-feed-page .bubble-2 {
+
+    width: 39px;
+    height: 39px;
+
+    left: 77px;
+    bottom: 47px;
+
+    opacity: 0.8;
+
+}
+
+
+/* cea mai mare */
+
+.art-feed-page .bubble-3 {
+
+    width: 56px;
+    height: 56px;
+
+    left: 126px;
+    bottom: 78px;
+
+}
+
+
+/* arcul roz */
+
+.art-feed-page .bubble-arc {
+
+    position: absolute;
+
+    width: 80%;
+    height: 80%;
+
+    left: 10%;
+    top: 10%;
+
+    border-radius: 50%;
+
+    border: 1px solid transparent;
+
+    border-top-color: #FEAFDC;
+    border-left-color: #FEAFDC;
+
+    transform: rotate(-25deg);
+
+    box-sizing: border-box;
+
+}
+
+
+/* ==================================================
+   ART MINI MENU
+================================================== */
+
+.art-feed-page .art-mini-menu {
+
+    position: absolute;
+
+    left: 170px;
+    top: 0;
+
+    bottom: auto;
+
+    width: 190px;
+
+    padding: 7px;
+
+    background: #FFD4EC;
+
+    border: 1px solid #fbcfe8;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    pointer-events: auto;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.12);
+
+    z-index: 510;
+
+}
+
+
+/* mini menu text */
+
+.art-feed-page .mini-menu-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 9px 13px;
+
+    border-radius: 11px;
+
+    color: #831843;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+}
+
+
+.art-feed-page .mini-menu-item:hover {
+
+    background: rgba(255,255,255,0.4);
+
+}
+
+
+/* inimioara din mini menu */
+
+.art-feed-page .mini-menu-item .heart-icon-small {
+
+    width: 14px;
+    height: 14px;
+
+    fill: #DF63A9;
+
+    flex-shrink: 0;
+
+}
+
+
+/* ==================================================
+   STUDIES COLORS
+================================================== */
+
+.studies-page {
+
+    background-color: #cfcae3;
+
+}
+
+.studies-page .art-feed-heading,
+.studies-page .art-post-name {
+
+    color: #2c1d69;
+
+}
+
+.studies-page .art-description {
+
+    color: #373442;
+
+}
+
+
+/* ==================================================
+   PROJECTS COLORS
+================================================== */
+
+.projects-page {
+
+    background-color: #d0d9d3;
+
+}
+
+.projects-page .art-feed-heading,
+.projects-page .art-post-name {
+
+    color: #344238;
+
+}
+
+.projects-page .art-description {
+
+    color: #373442;
+
+}
+
+
+/* ==================================================
+   SIDEBAR
+================================================== */
+
+.art-sidebar {
+
+    position: fixed;
+
+    left: 0;
+    top: 90px;
+    bottom: 0;
+
+    width: 90px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding-top: 35px;
+
+    gap: 25px;
+
+    z-index: 1000;
+
+}
+
+
+.art-sidebar-button {
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.art-sidebar-button svg {
+
+    width: 24px;
+    height: 24px;
+
+}
+
+
+.art-sidebar-button svg path,
+.art-sidebar-button svg circle,
+.art-sidebar-button svg line {
+
+    stroke: currentColor;
+
+    stroke-width: 1.7;
+
+    fill: none;
+
+}
+
+
+.sidebar-heart svg path {
+
+    fill: currentColor;
+
+    stroke: none;
+
+}
+
+
+.studies-page .art-sidebar {
+
+    color: #2c1d69;
+
+}
+
+
+.projects-page .art-sidebar {
+
+    color: #344238;
+
+}
+
+
+/* ==================================================
+   SEARCH
+================================================== */
+
+.art-search-container {
+
+    position: relative;
+
+}
+
+
+.art-search-box {
+
+    position: absolute;
+
+    left: 55px;
+    top: -5px;
+
+    width: 190px;
+
+    background: rgba(255,255,255,0.75);
+
+    border-radius: 20px;
+
+    padding: 8px 12px;
+
+    display: none;
+
+}
+
+
+.art-search-box.active {
+
+    display: block;
+
+}
+
+
+.art-search-box input {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+}
+
+
+#searchResults {
+
+    margin-top: 5px;
+
+}
+
+
+.search-result {
+
+    padding: 5px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+}
+
+
+/* ==================================================
+   MAIN FEED
+================================================== */
+
+.art-feed {
+
+    width: min(760px, calc(100% - 150px));
+
+    margin-left: 120px;
+
+    margin-right: auto;
+
+    padding-top: 45px;
+
+    padding-bottom: 80px;
+
+}
+
+
+.art-feed-heading {
+
+    margin-bottom: 45px;
+
+}
+
+
+.art-feed-heading h1 {
+
+    margin: 0;
+
+    font-size: 32px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.art-feed-heading p {
+
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.75;
+
+}
+
+
+/* ==================================================
+   POSTS
+================================================== */
+
+.art-post {
+
+    margin-bottom: 65px;
+
+}
+
+
+.art-post-name {
+
+    margin: 0 0 12px 0;
+
+    font-size: 17px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.art-image-frame {
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    background: rgba(255,255,255,0.28);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+
+.art-image-placeholder {
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.45;
+
+}
+
+
+/* ==================================================
+   ACTIONS
+================================================== */
+
+.art-post-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 10px;
+
+}
+
+
+.post-heart,
+.post-question {
+
+    width: 25px;
+    height: 25px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.post-heart svg {
+
+    width: 21px;
+    height: 21px;
+
+    fill: none;
+
+    stroke: #DF63A9;
+
+    stroke-width: 1.5;
+
+}
+
+
+.post-heart.active svg {
+
+    fill: #DF63A9;
+
+    stroke: #DF63A9;
+
+}
+
+
+.post-question {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+}
+
+
+.studies-page .post-question {
+
+    color: #2c1d69;
+
+}
+
+
+.projects-page .post-question {
+
+    color: #344238;
+
+}
+
+
+/* ==================================================
+   DESCRIPTION
+================================================== */
+
+.art-description {
+
+    display: none;
+
+    margin-top: 12px;
+
+    padding: 12px 0;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+.art-description.active {
+
+    display: block;
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+    .art-feed {
+
+        width: calc(100% - 110px);
+
+        margin-left: 100px;
+
+    }
+
+
+    .art-sidebar {
+
+        width: 70px;
+
+    }
+
+
+    .art-feed-page .thinking-bubbles {
+
+        left: 145px;
+
+        transform: scale(0.85);
+
+        transform-origin: top left;
+
+    }
+
+}
+
+/* ==================================================
+   IMAGES ADDED TO STUDIES / PROJECTS POSTS
+================================================== */
+
+.art-post-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Portfolio post images: use <img src="images/your-file.jpg" alt="Description"> inside .art-image-frame. */
+.art-image-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

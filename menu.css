@@ -1,0 +1,605 @@
+/* ==================================================
+   COMMON HEADER
+================================================== */
+
+.google-header {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 90px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    padding: 16px;
+
+    box-sizing: border-box;
+
+    z-index: 20000;
+
+}
+
+
+/* ==================================================
+   MENU CONTAINER
+================================================== */
+
+.menu-container {
+
+    position: relative;
+
+    z-index: 30000;
+
+}
+
+
+/* ==================================================
+   MENU BUTTON
+================================================== */
+
+.heart-menu-btn {
+
+    width: 96px;
+
+    height: 80px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background-color: #FEAFDC;
+
+    padding-right: 16px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    cursor: pointer;
+
+}
+
+
+/* ==================================================
+   THREE HEARTS
+================================================== */
+
+.heart-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.heart-icon {
+    width: 14px;
+    height: 14px;
+    fill: #DF63A9;
+    flex-shrink: 0;
+}
+
+
+
+/* ==================================================
+   MAIN DROPDOWN
+================================================== */
+
+.dropdown-menu {
+
+    position: absolute;
+
+    top: 88px;
+
+    left: 0;
+
+    width: 224px;
+
+    padding: 8px;
+
+    box-sizing: border-box;
+
+    background-color: #FFD4EC;
+
+    border: 1px solid #fbcfe8;
+
+    border-radius: 16px;
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    z-index: 30000;
+
+}
+
+
+.dropdown-menu.active {
+
+    display: flex;
+
+}
+
+
+/* ==================================================
+   MAIN MENU ITEMS
+================================================== */
+
+.menu-item {
+    width: 100%;
+    min-height: 38px;
+    box-sizing: border-box;
+
+    padding: 9px 13px;
+
+    border-radius: 11px;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: transparent;
+
+    color: #831843;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+.menu-item:hover {
+
+    background-color: rgba(255,255,255,0.4);
+
+}
+
+
+/* ==================================================
+   SMALL HEARTS
+================================================== */
+
+.heart-icon-small {
+    width: 14px;
+    height: 14px;
+    min-width: 14px;
+    min-height: 14px;
+    fill: #DF63A9;
+    flex-shrink: 0;
+}
+
+
+/* ==================================================
+   ART WRAPPER
+================================================== */
+
+.art-menu-wrapper {
+
+    position: relative;
+
+}
+
+
+/* ==================================================
+   THINKING BUBBLES
+================================================== */
+
+.thinking-bubbles {
+
+    position: absolute;
+
+    left: 224px;
+
+    top: 70px;
+
+    width: 205px;
+
+    height: 100px;
+
+    display: none;
+
+    pointer-events: none;
+
+    z-index: 31000;
+
+}
+
+
+.thinking-bubbles.active {
+
+    display: block;
+
+}
+
+
+/* ==================================================
+   BUBBLES
+================================================== */
+
+.thinking-bubble {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.12);
+
+    border: 1px solid rgba(254,175,220,0.75);
+
+    box-sizing: border-box;
+
+    pointer-events: auto;
+
+}
+
+
+.bubble-1 {
+
+    width: 14px;
+
+    height: 14px;
+
+    left: 2px;
+
+    top: 70px;
+
+}
+
+
+.bubble-2 {
+
+    width: 21px;
+
+    height: 21px;
+
+    left: 32px;
+
+    top: 47px;
+
+    opacity: 0.8;
+
+}
+
+
+.bubble-3 {
+
+    width: 29px;
+
+    height: 29px;
+
+    left: 66px;
+
+    top: 20px;
+
+}
+
+
+/* ==================================================
+   PINK ARC INSIDE BUBBLES
+================================================== */
+
+.bubble-arc {
+
+    position: absolute;
+
+    width: 80%;
+
+    height: 80%;
+
+    left: 10%;
+
+    top: 10%;
+
+    border-radius: 50%;
+
+    border: 1px solid transparent;
+
+    border-top-color: #FEAFDC;
+
+    border-left-color: #FEAFDC;
+
+    transform: rotate(-25deg);
+
+    box-sizing: border-box;
+
+}
+
+
+/* ==================================================
+   ART MINI MENU
+================================================== */
+
+.art-mini-menu {
+
+    position: absolute;
+
+    left: 102px;
+
+    top: 0;
+
+    width: 190px;
+
+    padding: 7px;
+
+    box-sizing: border-box;
+
+    background: #FFD4EC;
+
+    border: 1px solid #fbcfe8;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    pointer-events: auto;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+
+}
+
+
+/* ==================================================
+   ART MINI MENU ITEMS
+================================================== */
+
+.mini-menu-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 9px 13px;
+
+    border-radius: 11px;
+
+    text-decoration: none;
+
+    color: #831843;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+}
+
+
+.mini-menu-item:hover {
+
+    background-color: rgba(255,255,255,0.4);
+
+}
+
+
+/* ==================================================
+   HEADER TITLE
+================================================== */
+
+.header-title {
+
+    color: #023C5E;
+
+    font-family: "Alex Brush", cursive;
+
+    font-size: 42px;
+
+    line-height: 1;
+
+    padding-top: 8px;
+
+    padding-right: 10px;
+
+}
+
+
+/* ==================================================
+   MUSIC PAGE
+   MENU MUST STAY ABOVE SIDEBAR
+================================================== */
+
+.music-page .google-header {
+
+    position: relative;
+
+    z-index: 20000;
+
+}
+
+
+.music-page .menu-container {
+
+    position: relative;
+
+    z-index: 30000;
+
+}
+
+
+.music-page .dropdown-menu {
+
+    z-index: 30000;
+
+}
+
+
+.music-page .thinking-bubbles {
+
+    z-index: 31000;
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+    .header-title {
+
+        font-size: 32px;
+
+    }
+
+    .heart-menu-btn {
+
+        width: 80px;
+
+        height: 70px;
+
+    }
+
+    .dropdown-menu {
+
+        width: 224px;
+
+    }
+
+    .thinking-bubbles {
+
+        left: 190px;
+
+        top: 65px;
+
+    }
+}
+
+
+/* ==================================================
+   FINAL ART MENU POSITION
+   SAME POSITION ON EVERY PAGE
+================================================== */
+
+.thinking-bubbles {
+    top: 0 !important;
+    left: 224px !important;
+}
+
+
+/* mini menu stays aligned with ART */
+
+.art-mini-menu {
+    top: 0 !important;
+    left: 102px !important;
+    bottom: auto !important;
+}
+
+
+/* keep the bubbles exactly the same size */
+
+.bubble-1 {
+    width: 14px !important;
+    height: 14px !important;
+    left: 2px !important;
+    top: 70px !important;
+    bottom: auto !important;
+}
+
+.bubble-2 {
+    width: 21px !important;
+    height: 21px !important;
+    left: 32px !important;
+    top: 47px !important;
+    bottom: auto !important;
+    opacity: 0.8;
+}
+
+.bubble-3 {
+    width: 29px !important;
+    height: 29px !important;
+    left: 66px !important;
+    top: 20px !important;
+    bottom: auto !important;
+}
+
+
+/* ==================================================
+   FINAL SHARED HEADER
+   These rules keep the header consistent on every page.
+   The title uses the same scale as the original homepage.
+================================================== */
+
+.google-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 90px;
+    min-height: 90px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    z-index: 20000;
+}
+
+.menu-container {
+    position: relative;
+    width: 96px;
+    flex: 0 0 96px;
+    transition: width 0.4s ease;
+    z-index: 30000;
+}
+
+.menu-container:has(.dropdown-menu.active) {
+    width: 340px;
+    flex-basis: 340px;
+}
+
+.header-title {
+    flex-grow: 1;
+    min-width: 0;
+    color: #023C5E;
+    font-family: "Alex Brush", cursive;
+    font-size: 5.5vw;
+    line-height: 90px;
+    text-align: justify;
+    text-align-last: justify;
+    padding-left: 20px;
+    padding-right: 0;
+    padding-top: 0;
+    white-space: nowrap;
+    user-select: none;
+    transition: all 0.4s ease;
+}
+
+@media (max-width: 700px) {
+    .google-header {
+        padding: 10px 15px;
+    }
+
+    .header-title {
+        font-size: 9vw;
+        line-height: 1;
+        padding-left: 12px;
+    }
+
+    .menu-container:has(.dropdown-menu.active) {
+        width: 280px;
+        flex-basis: 280px;
+    }
+
+    .dropdown-menu {
+        width: 265px;
+    }
+}
